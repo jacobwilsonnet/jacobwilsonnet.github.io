@@ -193,7 +193,7 @@ header .banner-text hr {
 }
 
 .header-overlay {  
-  background: #161415 url(../images/bg-blur.jpg) no-repeat top center;     
+  /* background: #161415 url(../images/bg-blur.jpg) no-repeat top center;      */
   background-size:  cover!important;
   position: absolute;
   top: 0;
