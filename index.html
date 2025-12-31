@@ -1,467 +1,266 @@
 <!DOCTYPE html>
-<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
-<script
-    src="https://www.datadoghq-browser-agent.com/datadog-rum-v4.js"
-    type="text/javascript">
-</script>
-<script>
-    window.DD_RUM && window.DD_RUM.init({
-        applicationId: '84a3d046-f83c-42b9-9fb7-98b66109b45b',
-        clientToken: 'pub98b3c06551d1893e9e04cc0103ee6f69',
-        site: 'datadoghq.com',
-        service:'jacobwilson.net',
-        env:'prd',
-        // Specify a version number to identify the deployed version of your application in Datadog 
-        // version: '1.0.0',
-        sampleRate: 100,
-        trackInteractions: true,
-        defaultPrivacyLevel: 'allow'
-    }); 
-
-    window.DD_RUM &&
-    window.DD_RUM.startSessionReplayRecording();
-</script>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-40741623-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-   <!--- Basic Page Needs
-   ================================================== -->
-  <meta charset="utf-8">
-	<title>Jacob Wilson</title>
-	<meta name="description" content="Jacob Wilson, Senior Site Reliability Engineer">
-	<meta name="author" content="Jacob Wilson">
-
-   <!-- Mobile Specific Metas
-   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- CSS
-    ================================================== -->
-   <link rel="stylesheet" href="css/default.css">
-	 <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="css/responsive.css">
-   <link rel="stylesheet" href="css/animate.css">
-   <link rel="stylesheet" href="css/magnific-popup.css">
-   <link rel="stylesheet" href="assets/owl-carousel/owl.carousel.css">
-   <link rel="stylesheet" href="assets/owl-carousel/owl.theme.css">
-
-   <!-- Script
-   ================================================== -->
-	<script src="js/modernizr.js"></script>
-
-   <!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="favicon.png" >
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jacob Wilson | Site Reliability Engineer</title>
+  <meta name="description" content="Jacob Wilson is a Senior Site Reliability Engineer focused on resilient infrastructure, observability, and automation.">
+  <meta name="author" content="Jacob Wilson">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Preloader --> 
-    <div id="preloader">
-      <div class="loader"></div>    
-    </div><!--preloader end-->
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="logo" href="#top" aria-label="Jacob Wilson home">
+        <span>JW</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+      <nav id="site-nav" class="site-nav">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    
-   <!-- Header
-   ================================================== -->
-   <header id="home">
-
-      <nav id="left-nav">
-
-        <div class="logo">
-          <img src="images/headshot_2023.jpg">
+  <main id="main">
+    <section id="top" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-top">
+            <div class="hero-title">
+              <div class="hero-eyebrow">
+                <p class="eyebrow">Jacob Wilson</p>
+                <img class="hero-photo-inline" src="assets/jacob-wilson.jpg" alt="Portrait of Jacob Wilson" loading="lazy">
+              </div>
+              <h1>Site Reliability Engineer</h1>
+              <!-- <p class="hero-subtitle">Building reliable platforms teams trust and depend on</p> -->
+              <p class="lede">
+                I build reliable platforms, enjoy turning messy problems into simple systems, and care a lot about helping teams do their best work. I'm based in Chicago, IL.
+              </p>
+            </div>
+            <div class="hero-image" role="presentation">
+              <img src="assets/jacob-wilson.jpg" alt="Portrait of Jacob Wilson" loading="lazy">
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Let’s connect</a>
+          </div>
         </div>
+      </div>
+      <div class="hero-glow" aria-hidden="true"></div>
+    </section>
 
-        <div class="menu" id="menu">
-          <span class="menu-global menu-top"></span>
-          <span class="menu-global menu-middle"></span>
-          <span class="menu-global menu-bottom"></span>
+    <section id="about" class="section">
+      <div class="container split">
+        <div>
+          <h2>About</h2>
+          <p>
+            I’m a Senior Site Reliability Engineer who thrives at the intersection of infrastructure automation,
+            developer experience, and observability. I focus on building systems that are secure, scalable, and
+            easy to operate, backed by clear documentation and reliable on-call practices. I also enjoy mentoring SREs and building onboarding programs that help teams adopt new platforms quickly.
+          </p>
         </div>
-
-         <ul id="nav" class="nav">
-            <li class="current">
-              <a class="smoothscroll" href="#home"><i class="fa fa-home fa-fw"></i>Home</a>
-            </li>
-            <li>
-              <a class="smoothscroll" href="#about"><i class="fa fa-user fa-fw"></i>About Me</a>
-            </li>
-            <!-- <li>
-              <a class="smoothscroll" href="#resume"><i class="fa fa-file-text fa-fw"></i>Resume</a>
-            </li> -->
-            
-            <li>
-              <a class="smoothscroll" href="#contact"><i class="fa fa-envelope fa-fw"></i>Contact</a>
-            </li>
-         </ul> <!-- end #nav -->
-
-      </nav> <!-- end #nav-wrap -->
-
-      <div class="row banner">
-         <div class="banner-text">
-            <h1 class="responsive-headline wow zoomIn">I'm <span>Jacob Wilson</span></h1>
-            <h3 class="wow fadeInUp"><span>Site Reliability Engineer</span> and <span>Freelance Web Developer</span></h3>
-            <hr />
-         </div>
-      </div>
-
-      <p class="scrolldown">
-         <a class="smoothscroll" href="#about"><i class="fa fa-angle-double-down"></i></a>
-      </p>
-
-      <div class="header-overlay"></div>
-
-   <!-- Social Section
-   ================================================== -->
-   <div id="social">
-      <div class="row social-container">
-            <ul class="social">
-               <li><a href="https://www.facebook.com/jacobwilson4" target="_blank"><i class="fa fa-facebook"></i></a></li>
-               <!-- <li><a href="https://twitter.com/jacob_wilson07" target="_blank"><i class="fa fa-twitter"></i></a></li> -->
-               <li><a href="https://www.linkedin.com/in/jacob-wilson-54795077" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-			   <li><a href="https://www.instagram.com/jacob.wilson5/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-            </ul>
-      </div>
-
-   </div> <!-- Social End -->
-
-   </header> <!-- Header End -->
-
-   <!-- About Section
-   ================================================== -->
-   <section id="about">
-
-      <div class="row bio-container">
-        <div class="twelve columns bio-inner">
-         <div class="six columns bio-left"> 
-         <div class="pp-container">
-
-            <img class="profile-pic wow zoomIn"  src="images/headshot_2023.jpg" alt="" />
-              <h2>Jacob Wilson</h2>
-              <h3>Site Reliability Engineer at CoverMyMeds</h3>              
-            </div> <!-- Profile Picture -->
-         </div>
-
-
-         <div class="six columns main-col wow fadeIn">
-          <div class="arrow-left"></div>
-
-            <p>​<font size="4">
-            </font></p>
-
-          <div class="row">            
-            <div class="six columns download">
-                <p>
-                  <a href="#contact" class="button"><i class="fa fa-paper-plane"></i>Contact Me</a>
-                  <a href="docs/Jacob_Wilson_2023.pdf" class="button" target="_blank"><i class="fa fa-download"></i>Download Resume</a>
-                </p>
-            </div> <!-- Download Buttons --> 
-      </div>
-
-         </div> <!-- end .main-col -->
-      </div>
-      </div>
-
-
-   </section> <!-- About Section End-->
-
-
-   <!-- Resume Section
-   ================================================== -->
-   <section id="resume">
-      
-
-
-      <!-- Work
-      ========================================= -->
-      <!-- <div class="row work">
-
-         <div class="three columns header-col">
-            <h2><span>Employment</span></h2>
-         </div>
-
-         <div class="nine columns main-col">
-         <div class="work-timeline">
-            <ul class="timeline">
-			 <li class="timeline-event">
-                <label class="timeline-event-icon"></label>
-                <div class="timeline-event-copy">
-                  <p class="timeline-event-thumbnail">Nov 2019 - Present</p>
-                  <h3>84.51°</h3>
-                  <h4>Senior Site Reliability Engineer / Versatilist</h4>
-                  <p>•Enacted an automated deployment pipeline for a series of observability tools to be used by the enterprise.
-                  </br>•These tools include Promethus, Thanos, Jaeger and others using Ansible to deploy
-                  </br>•Collaborated to create a Site Reliability Engineering team to improve reliability, performance and implement SRE ways of working.
-                  </br>•Implement and maintain monitoring solutions at the server and application level to increase visibility into day-to-day operations and issues, utilizing Grafana, Prometheus Exporters, Dynatrace and others.
-                  </br>•Provide training for Production Support Teams and other Engineers on SRE best practices and tools, including training, documentation, and one-on-one sessions.        
-</p>
-				  </div>
-         <div class="work-timeline">
-            <ul class="timeline">
-			 <li class="timeline-event">
-                <label class="timeline-event-icon"></label>
-                <div class="timeline-event-copy">
-                  <p class="timeline-event-thumbnail">May 2016 - Nov 2019</p>
-                  <h3>84.51°</h3>
-                  <h4>Information Technology Co-op</h4>
-                  Database, Network, and Windows Infrastructure Co-op
-               </br>• Experience with troubleshooting and configurating of Oracle Exadata, Postgres and MongoDB databases
-               </br>• Contributed to deploying, maintaining and troubleshooting network related equipment within the office and datacenters
-               </br>• Daily management and troubleshooting issues within a Windows environment using Active Directory, Office 365 and Exchange 2016
-				  </div>
-              </li>
-			  <li class="timeline-event">
-                <label class="timeline-event-icon"></label>
-                <div class="timeline-event-copy">
-                  <p class="timeline-event-thumbnail">May 2014 - Present</p>
-                  <h3>Freelance</h3>
-                  <h4>Web Developer, Graphic Designer and AWS System Administrator</h4>
-                  <p>• Create, deploy and manage virtual instances (EC2) on Amazon Web Services
-</br>• Manage instances using UNIX to capitalize on minimal usage to diminish client cost
-</br>• Fully built client facing websites using different types of development tools. These tools include HTML5,
-JavaScript, CSS, WordPress and Joomla.
-</p>
-				  </div>
-              </li>
-              <li class="timeline-event">
-                <label class="timeline-event-icon"></label>
-                <div class="timeline-event-copy">
-                  <p class="timeline-event-thumbnail">May 2015 - August 2015</p>
-                  <h3>Cooper Tire & Rubber Company</h3>
-                  <h4>Network Infrastructure Intern</h4>
-                  <p>Configuring, deploying and analyzing Cisco switches and VoIP phones. Managed and deployed companywide upgrades to SolarWinds and improved productivity by implementing ease of use. General technical support for Cisco routers and Juniper firewalls. Created and revised Visio network diagrams.</p>
-                </div>
-              </li>
-              <li class="timeline-event">
-                <label class="timeline-event-icon"></label>
-                <div class="timeline-event-copy">
-                  <p class="timeline-event-thumbnail">October 2014 - May 2016</p>
-                  <h3>University of Cincinnati Lindner College of Business</h3>
-                  <h4>IT Helpdesk Support</h4>
-                  <p>Provide technology related support to students, faculty members and professors with personal and university owned devices. General computer troubleshooting, imaging and deploying new systems to staff.</p>
-                </div>
-              </li>
-			  <li class="timeline-event">
-                <label class="timeline-event-icon"></label>
-                <div class="timeline-event-copy">
-                  <p class="timeline-event-thumbnail">January 2012 - December 2014</p>
-                  <h3>Findlay City Schools</h3>
-                  <h4>Technical Support</h4>
-                  <p>*High School Job*
-· Work directly with teachers, administrators and students with technology related issues. Some responsibilities include managing the helpdesk ticket system, reimaging systems, managing the school’s network and developing websites for departments and organizations.
-· During the school year, worked 20 hour weeks at the high school. Summers worked 40 hour weeks working througout entire school district.</p>
-                </div>
-              </li>
-            </ul>  
-         </div> <!-- Work Timeline End --> 
-         </div> 
-
-      </div> <!-- End Work -->
-<!-- Education
-      =============================================== -->
-      <!-- <div class="row education">
-
-         <div class="three columns header-col">
-            <h2><span>Education</span></h2>
-         </div>
-
-      <div class="nine columns main-col">
-         <div class="education-timeline">
-            <ul class="timeline">
-              <li class="timeline-event">
-                <label class="timeline-event-icon"></label>
-                <div class="timeline-event-copy">
-                  <p class="timeline-event-thumbnail">August 2014 - May 2019</p>
-                  <h3>University of Cincinnati</h3>
-                  <h4>Bachelor of Science</h4>
-                  <p><strong>Information Technology, Networking Track</strong><br>
-                     3.6 GPA</br>
-					 <b>President of Information Technology Student Association at UC</b>
-</br>• Organizes and presides over all ITSA meetings
-</br>• Oversees the Executive Board and Executive Board meetings
-</br>• Organizes and oversees all ITSA events in conjunction with the Executive Board
-
-					</br></br>
-					<b>Active Member of Alpha Lambda Delta National Honor Society</b>
-					Volunteer experiences for students with a 3.5 GPA of higher.
-                </div>
-              </li>
-              <li class="timeline-event">
-                <label class="timeline-event-icon"></label>
-                <div class="timeline-event-copy">
-                  <p class="timeline-event-thumbnail">August 2010 - August 2014</p>
-                  <h3>Findlay High School</h3>
-                  <h4>Findlay, Ohio</h4>
-                  <p><strong>3.4 GPA</strong><br>
-				  <p><strong>Vice President of Key Club</strong><br>
-                     Key Club is a group of students that work with Kiwanis International to help provide volunteer opportunities for high school students. Helped organize a group of students to help clean up high school and organized trips to local animal shelters</p>
-                </div>
-              </li>
-            </ul>  
-         </div> Education Timeline End  -->
-      </div>
-
-      </div> <!-- End Education -->
-
-      <!-- Skills
-      =============================================== -->
-    <!--  <div class="row skill">
-
-         <div class="three columns header-col">
-            <h2><span>Skills</span></h2>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <p>Here are a few of my technical skills that I've gainned from experience over the years.
-            </p>
-
-        <div class="bars">
-
-           <ul class="skills">
-            <li><span class="bar-expand photoshop wow fadeInLeft"></span><em>Network Support</em></li>
-            <li><span class="bar-expand illustrator wow fadeInLeft"></span><em>Graphic Design</em></li>
-            <li><span class="bar-expand wordpress wow fadeInLeft"></span><em>HTML5</em></li>
-            <li><span class="bar-expand css wow fadeInLeft"></span><em>Wordpress</em></li>
-            <li><span class="bar-expand html5 wow fadeInLeft"></span><em>Photoshop</em></li>
-            <li><span class="bar-expand jquery wow fadeInLeft"></span><em>Technical Support</em></li>
+        <div class="about-card">
+          <h3>What I care about</h3>
+          <ul>
+            <li>Automation that eliminates repetitive toil.</li>
+            <li>Metrics that tell a story, not just numbers.</li>
+            <li>Infrastructure that earns trust through clarity.</li>
           </ul>
-
-        </div><!-- end skill-bars -->
-
-      </div> <!-- main-col end -->
-
-      </div> <!-- End skills -->
-
-
-      <div class="row awards">
-
-         
-
-         
-
-      </div> 
-
-   </section> <!-- Resume Section End-->
-
-
-
-
-   <!-- Call-To-Action Section
-   ================================================== -->
-   <!--<section id="call-to-action">
-
-      <div class="row">
-
-         <div class="two columns header-col">
-            <h1 class="wow fadeInLeft">
-              <span><i class="fa fa-paper-plane fa-5x pull-left fa-fw"></i></span>
-            </h1>
-         </div>
-
-         <div class="seven columns">            
-            <h2 class="wow zoomIn">Hire me!</h2>
-            <p>I am available for creating websites, graphical design or just about anything technical related. Hire me and get your project done!</p>
-
-         </div>
-
-         <div class="three columns action wow fadeIn">
-
-            <a href="#contact" class="button">Contact Me</a>
-
-         </div>
-
+        </div>
       </div>
+    </section>
 
-   </section> <!-- Call-To-Action Section End-->
-
-
-   <!-- Testimonials Section
-   ================================================== -->
-   
-
-
-   <!-- Contact Section
-   ================================================== -->
-   <section id="contact">
-
-      <div class="row section-head">
-          <div class="twelve columns">
-              <h1 class="section">Get In Touch</h1>
-			  <p class="lead">Jacob Wilson</p>
-              <p class="lead">Email Me: <a href="mailto:jacob@jacobwilson.net">jacob@jacobwilson.net</a> </p>
-			  <!-- <p class="lead">Phone: <a href="tel:5134637839">513-463-7839</a> </p> -->
-          </div>
-      </div> <!-- Section head --> 
-
-      <div class="row">
-          <div class="five columns">
-            
-          </div>
-
-
-
-
-      </div> <!-- Row ends-->
-
-
-
-   </section> <!-- Contact Section End-->
-
-
-   <!-- footer
-   ================================================== -->
-   <footer>
-
-      <div class="row">
-
-         <div class="row social-container">
-
-            <ul class="social">
-               <li><a href="https://www.facebook.com/jacobwilson4" target="_blank"><i class="fa fa-facebook"></i></a></li>
-               <!-- <li><a href="https://twitter.com/jacob_wilson07" target="_blank"><i class="fa fa-twitter"></i></a></li> -->
-               <li><a href="https://www.linkedin.com/in/jacob-wilson-54795077" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-			   <li><a href="https://www.instagram.com/jacob.wilson5/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-            </ul>
-</div>
-            <ul class="copyright">
-               <li>Jacob Wilson &copy; Copyright 2023, All Rights Reserved</li>
-               
-            </ul>
-
-         
-
-         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="fa fa-chevron-up"></i></a></div>
-
+    <section class="section highlights">
+      <div class="container">
+        <h2>Focus areas</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Infrastructure as Code</h3>
+            <p>Reusable Terraform modules and Kubernetes ready patterns that make compliant environments easy to ship and operate.</p>
+          </article>
+          <article class="card">
+            <h3>Observability</h3>
+            <p>Prometheus, Grafana, Thanos, Jaeger, Datadog, and Dynatrace for insight that supports fast, calm incident response.</p>
+          </article>
+          <article class="card">
+            <h3>Reliability Practices</h3>
+            <p>Incident response, SLI/SLO definition, and postmortems that drive lasting improvements.</p>
+          </article>
+        </div>
       </div>
+    </section>
 
-   </footer> <!-- Footer End-->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div>
+              <p class="timeline-role">Senior Site Reliability Engineer</p>
+              <p class="timeline-company">CoverMyMeds</p>
+              <p class="timeline-dates">May 2022 — Present</p>
+            </div>
+            <ul>
+  <li>Lead platform and infrastructure engineering initiatives using Terraform, Kubernetes, and Azure to enable multiple product teams to ship compliant, production ready services.</li>
+  <li>Design and maintain reusable Terraform modules and platform standards that balance scalability, security, and developer experience.</li>
+  <li>Build and operate Kubernetes based application platforms using Argo CD for GitOps delivery and JFrog Artifactory for artifact management.</li>
+  <li>Develop internal tooling to automate SOX program change workflows, reducing turnaround time from days to hours.</li>
+  <li>Mentor Site Reliability Engineers and create onboarding programs that accelerate adoption of platform and deployment practices.</li>
+</ul>
+          </article>
+          <article class="timeline-item">
+            <div>
+              <p class="timeline-role">Senior Site Reliability Engineer</p>
+              <p class="timeline-company">84.51° (The Kroger Company)</p>
+              <p class="timeline-dates">Nov 2019 — May 2022</p>
+            </div>
+            <ul>
+              <li>Helped form the SRE team and established SLOs and monitoring practices.</li>
+              <li>Led deployment of enterprise observability tooling for monitoring and alerting.</li>
+              <li>Delivered stacks with Prometheus, Thanos, Jaeger, and Dynatrace.</li>
+            </ul>
+          </article>
+          <article class="timeline-item">
+            <div>
+              <p class="timeline-role">Versatilist Engineer</p>
+              <p class="timeline-company">84.51° (The Kroger Company)</p>
+              <p class="timeline-dates">Jun 2018 — Nov 2019</p>
+            </div>
+            <ul>
+              <li>Partnered with engineering and infrastructure to ship a commercial application.</li>
+              <li>Built monitoring, alerting, and automation for performance improvements.</li>
+              <li>Led Grafana adoption with real-time insights on usage and performance.</li>
+            </ul>
+          </article>
+          <article class="timeline-item">
+            <div>
+              <p class="timeline-role">Information Technology Co-op</p>
+              <p class="timeline-company">84.51° (The Kroger Company)</p>
+              <p class="timeline-dates">May 2016 — May 2018</p>
+            </div>
+            <ul>
+              <li>Database, desktop, network, and Windows infrastructure rotations.</li>
+              <li>Deployed Graylog, supported Exadata/Postgres/MongoDB troubleshooting.</li>
+              <li>Managed enterprise OS changes and endpoint tooling (Jamf, SCCM).</li>
+              <li>Implemented network traffic prioritization and datacenter upgrades.</li>
+            </ul>
+          </article>
+          <article class="timeline-item">
+            <div>
+              <p class="timeline-role">IT Helpdesk Support</p>
+              <p class="timeline-company">University of Cincinnati, Lindner College of Business</p>
+              <p class="timeline-dates">Oct 2014 — May 2016</p>
+            </div>
+            <ul>
+              <li>Provided tech support for students, faculty, and staff devices.</li>
+              <li>Handled imaging, troubleshooting, and device deployments.</li>
+            </ul>
+          </article>
+          <article class="timeline-item">
+            <div>
+              <p class="timeline-role">Network Infrastructure Co-op</p>
+              <p class="timeline-company">Cooper Tire & Rubber Company</p>
+              <p class="timeline-dates">May 2015 — Aug 2015</p>
+            </div>
+            <ul>
+              <li>Configured Cisco switching, VoIP, and firewall infrastructure.</li>
+              <li>Deployed SolarWinds upgrades and refreshed network diagrams.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
 
-   <!-- Java Script
-   ================================================== -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skill-grid">
+          <div class="skill-block">
+            <h3>Tooling</h3>
+            <p>Grafana, Prometheus, Thanos, Jaeger, Datadog, Dynatrace, Argo CD, JFrog Artifactory, Docker, Ansible.</p>
+          </div>
+          <div class="skill-block">
+            <h3>Infrastructure</h3>
+            <p>Terraform (IaC), Kubernetes, Azure, AWS, GCP, Windows Server, RHEL.</p>
+          </div>
+          <div class="skill-block">
+            <h3>Languages</h3>
+            <p>Python, Bash, SQL, Ruby.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-   <script src="js/jquery-2.1.1.min.js"></script>
-   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&AMP;sensor=false"></script>
-   <script src="js/gmaps.js"></script>
-   <script src="assets/owl-carousel/owl.carousel.min.js"></script>
-   <script src="js/waypoints.js"></script>
-   <script src="js/jquery.fittext.js"></script>
-   <script src="js/magnific-popup.js"></script>
-   <script src="js/wow.min.js"></script>
-   <script src="js/jquery.nicescroll.min.js"></script>
-   <script src="js/script.js"></script>
+    <section id="resume" class="section resume">
+      <div class="container split">
+        <div>
+          <h2>Resume</h2>
+          <p>
+            The full resume includes detailed project scope, technical achievements, and education history.
+          </p>
+          <div class="resume-actions">
+            <a class="btn btn-primary" href="assets/Jacob_Wilson_Resume_2024.pdf" target="_blank" rel="noopener">Download PDF</a>
+            <a class="btn btn-ghost" href="mailto:jacob@jacobwilson.net">Email me</a>
+          </div>
+        </div>
+        <div class="resume-card">
+          <h3>Education</h3>
+          <p class="resume-title">B.S. Information Technology, Network/Systems Focus</p>
+          <p class="resume-subtitle">University of Cincinnati — 2014 to 2019</p>
+          <p class="resume-title">Findlay High School</p>
+          <p class="resume-subtitle">2010 to 2014</p>
+        </div>
+      </div>
+    </section>
 
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2>Let’s talk</h2>
+        <p>
+          I’m always open to meaningful collaborations, new challenges, and friendly conversations.
+        </p>
+        <div class="contact-grid">
+          <a class="contact-card" href="mailto:jacob@jacobwilson.net">
+            <span>Email</span>
+            <strong>jacob@jacobwilson.net</strong>
+          </a>
+          <a class="contact-card" href="https://www.linkedin.com/in/jacob-wilson-54795077" target="_blank" rel="noopener">
+            <span>LinkedIn</span>
+            <strong>Connect professionally</strong>
+          </a>
+          <a class="contact-card" href="https://www.instagram.com/jacob.wilson5/" target="_blank" rel="noopener">
+            <span>Instagram</span>
+            <strong>Social updates</strong>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Jacob Wilson</p>
+      <div class="footer-links">
+        <a href="https://www.facebook.com/jacobwilson4" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.linkedin.com/in/jacob-wilson-54795077" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/jacob.wilson5/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
