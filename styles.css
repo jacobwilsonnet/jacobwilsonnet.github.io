@@ -18,11 +18,17 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  min-height: 100%;
+  background-color: #8f887f;
+}
+
 body {
   margin: 0;
   font-family: var(--font-body);
   color: var(--ink);
-  background:
+  background-image:
     radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.18), transparent 45%),
     radial-gradient(circle at 85% 20%, rgba(29, 86, 82, 0.22), transparent 55%),
     radial-gradient(circle at 70% 80%, rgba(180, 139, 76, 0.18), transparent 60%),
