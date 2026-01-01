@@ -46,6 +46,13 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
 h1, h2, h3 {
   font-family: var(--font-display);
   margin: 0 0 0.75rem;
@@ -70,6 +77,11 @@ ul {
 
 .section {
   padding: 5rem 0;
+  scroll-margin-top: 96px;
+}
+
+.hero {
+  scroll-margin-top: 96px;
 }
 
 .skip-link {
@@ -241,6 +253,7 @@ ul {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-top: 2.975rem;
 }
 
 .btn {
@@ -384,21 +397,23 @@ ul {
   color: var(--muted);
 }
 
-.skill-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-}
-
-.skill-block {
-  background: var(--card);
-  padding: 1.6rem;
-  border-radius: 18px;
-  border: 1px solid rgba(27, 29, 32, 0.08);
-}
-
 .resume {
   background: linear-gradient(120deg, rgba(29, 86, 82, 0.12), rgba(227, 222, 214, 0.6));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .resume-actions {
@@ -560,7 +575,7 @@ ul {
   }
 
   .hero-actions {
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
   }
 
   .hero-meta {
