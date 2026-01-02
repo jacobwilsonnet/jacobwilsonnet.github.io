@@ -866,6 +866,8 @@ ul {
 .timeline-role {
   font-weight: 700;
   color: var(--text-primary);
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
 }
 
 .timeline-company {
@@ -874,6 +876,8 @@ ul {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
 }
 
 .timeline-dates {
