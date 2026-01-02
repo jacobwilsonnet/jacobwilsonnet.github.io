@@ -4,18 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Jacob Wilson | Site Reliability Engineer</title>
-  <meta name="description" content="Jacob Wilson is a Senior Site Reliability Engineer focused on resilient infrastructure, observability, and automation.">
+  <meta name="description" content="Senior Site Reliability Engineer building platforms that don't wake you up at 3am. Specializing in Kubernetes, Terraform, Azure, and observability.">
   <meta name="author" content="Jacob Wilson">
-  <meta property="og:title" content="Jacob Wilson | Site Reliability Engineer">
-  <meta property="og:description" content="Jacob Wilson is a Senior Site Reliability Engineer focused on resilient infrastructure, observability, and automation.">
+  <meta name="keywords" content="Site Reliability Engineering, SRE, DevOps, Kubernetes, Terraform, Azure, Infrastructure as Code, Observability, Prometheus, Grafana">
+  <meta property="og:title" content="Jacob Wilson | Senior Site Reliability Engineer">
+  <meta property="og:description" content="Building platforms that don't wake you up at 3am. Specializing in Kubernetes, Terraform, Azure, and observability.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jacobwilson.net">
   <meta property="og:image" content="https://jacobwilson.net/assets/jacob-wilson.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Jacob Wilson | Site Reliability Engineer">
-  <meta name="twitter:description" content="Jacob Wilson is a Senior Site Reliability Engineer focused on resilient infrastructure, observability, and automation.">
+  <meta name="twitter:title" content="Jacob Wilson | Senior Site Reliability Engineer">
+  <meta name="twitter:description" content="Building platforms that don't wake you up at 3am. Kubernetes • Terraform • Azure • Observability">
   <meta name="twitter:image" content="https://jacobwilson.net/assets/jacob-wilson.jpg">
-  <meta name="theme-color" content="#8f887f">
+  <meta name="twitter:creator" content="@jacobwilson">
+  <meta name="theme-color" content="#0a0e27">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Jacob Wilson">
@@ -23,7 +27,37 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+  <link rel="preload" as="style" href="styles.css">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jacob Wilson",
+    "jobTitle": "Senior Site Reliability Engineer",
+    "description": "Senior Site Reliability Engineer specializing in infrastructure automation, Kubernetes, and observability",
+    "url": "https://jacobwilson.net",
+    "image": "https://jacobwilson.net/assets/jacob-wilson.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Chicago",
+      "addressRegion": "IL",
+      "addressCountry": "US"
+    },
+    "alumniOf": {
+      "@type": "Organization",
+      "name": "University of Cincinnati"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/jacob-wilson-54795077",
+      "https://www.instagram.com/jacob.wilson5/"
+    ],
+    "knowsAbout": ["Kubernetes", "Terraform", "Azure", "Site Reliability Engineering", "DevOps", "Prometheus", "Grafana", "Infrastructure as Code", "Observability"]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -40,8 +74,8 @@
       </button>
       <nav id="site-nav" class="site-nav">
         <a href="#about">About</a>
+        <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
-        <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -58,12 +92,28 @@
                 <img class="hero-photo-inline" src="assets/jacob-wilson.jpg" alt="Portrait of Jacob Wilson" loading="lazy">
               </div>
               <h1>Site Reliability Engineer</h1>
-              <!-- <p class="hero-subtitle">Building reliable platforms teams trust and depend on</p> -->
+              <p class="hero-subtitle">Here to make things work better (and have fun doing it)</p>
+              <div class="availability-status">
+                <div class="status-badge">
+                  <span class="status-dot"></span>
+                  <span class="status-text">Available for opportunities</span>
+                </div>
+                <div class="status-tooltip">
+                  <p><strong>Open to:</strong></p>
+                  <ul>
+                    <li>Full-time SRE/Platform roles</li>
+                    <li>Consulting engagements</li>
+                    <li>Technical advisory</li>
+                  </ul>
+                  <p class="status-response-time">Usually responds within 24 hours</p>
+                </div>
+              </div>
               <p class="lede">
                 Based in Chicago, IL
               </p>
               <div class="hero-actions">
-                <a class="btn btn-primary" href="#contact">Let’s connect</a>
+                <a class="btn btn-primary" href="#contact">Let's connect</a>
+                <a class="btn btn-ghost" href="assets/Jacob_Wilson_Resume_2024.pdf" target="_blank" rel="noopener">Download Resume</a>
               </div>
             </div>
             <div class="hero-image" role="presentation">
@@ -80,19 +130,23 @@
         <div>
           <h2>About</h2>
           <p>
-            I’m a Senior Site Reliability Engineer who thrives at the intersection of infrastructure automation,
-            developer experience, and observability. I focus on building systems that are secure, scalable, and
-            easy to operate, backed by clear documentation and reliable on-call practices. I also enjoy mentoring SREs and building onboarding programs that help teams adopt new platforms quickly.
+            I'm a Senior Site Reliability Engineer focused on infrastructure automation, developer experience, and observability.
+            I build systems that are secure, scalable, and easy to operate, and I enjoy mentoring engineers along the way.
+          </p>
+          <p>
+            New to Chicago and loving it. Outside of work, you'll find me at the gym,
+            tinkering with home automation projects, or diving deep into AI. I believe the best systems
+            are built with curiosity and a willingness to break things.
           </p>
         </div>
-        <!-- <div class="about-card">
-          <h3>What I care about</h3>
-          <ul>
-            <li>Automation that eliminates repetitive toil.</li>
-            <li>Metrics that tell a story, not just numbers.</li>
-            <li>Infrastructure that earns trust through clarity.</li>
+        <div class="about-card currently-card">
+          <h3>Currently</h3>
+          <ul class="currently-list">
+            <li><strong>Overengineering:</strong> My personal website (obviously)</li>
+            <li><strong>Debugging:</strong> Why my smart home is smarter than me</li>
+            <li><strong>Exploring:</strong> Chicago's coffee scene</li>
           </ul>
-        </div> -->
+        </div>
       </div>
     </section>
 
@@ -101,17 +155,69 @@
         <h2>Focus areas</h2>
         <div class="card-grid">
           <article class="card">
+            <span class="card-icon mdi mdi-cog"></span>
             <h3>Infrastructure as Code</h3>
             <p>Reusable Terraform modules and Kubernetes ready patterns that make compliant environments easy to ship and operate.</p>
           </article>
           <article class="card">
+            <span class="card-icon mdi mdi-chart-line"></span>
             <h3>Observability</h3>
             <p>Prometheus, Grafana, Thanos, Jaeger, Datadog, and Dynatrace for insight that supports fast, calm incident response.</p>
           </article>
           <article class="card">
+            <span class="card-icon mdi mdi-shield-check"></span>
             <h3>Reliability Practices</h3>
             <p>Incident response, SLI/SLO definition, and postmortems that drive lasting improvements.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section tech-stack">
+      <div class="container">
+        <h2>Tech Stack</h2>
+        <div class="tech-categories">
+          <div class="tech-category" data-index="01">
+            <h3>Cloud & Infrastructure</h3>
+            <div class="tech-tags">
+              <span class="tech-tag">Azure</span>
+              <span class="tech-tag">Kubernetes</span>
+              <span class="tech-tag">Terraform</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">Argo CD</span>
+            </div>
+          </div>
+          <div class="tech-category" data-index="02">
+            <h3>Observability & Monitoring</h3>
+            <div class="tech-tags">
+              <span class="tech-tag">Prometheus</span>
+              <span class="tech-tag">Grafana</span>
+              <span class="tech-tag">Thanos</span>
+              <span class="tech-tag">Jaeger</span>
+              <span class="tech-tag">Datadog</span>
+              <span class="tech-tag">Dynatrace</span>
+            </div>
+          </div>
+          <div class="tech-category" data-index="03">
+            <h3>Tools & Automation</h3>
+            <div class="tech-tags">
+              <span class="tech-tag">GitOps</span>
+              <span class="tech-tag">JFrog Artifactory</span>
+              <span class="tech-tag">Graylog</span>
+              <span class="tech-tag">Ansible</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Bash</span>
+            </div>
+          </div>
+          <div class="tech-category" data-index="04">
+            <h3>Databases & Data</h3>
+            <div class="tech-tags">
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">Exadata</span>
+              <span class="tech-tag">Redis</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -120,56 +226,114 @@
       <div class="container">
         <h2>Experience</h2>
         <div class="timeline">
-          <article class="timeline-item">
-            <div>
-              <p class="timeline-role">Senior Site Reliability Engineer</p>
-              <p class="timeline-company">CoverMyMeds</p>
-              <p class="timeline-dates">May 2022 — Present</p>
+          <article class="timeline-item expandable">
+            <button class="timeline-header" aria-expanded="false">
+              <div class="timeline-header-content">
+                <p class="timeline-role">Senior Site Reliability Engineer</p>
+                <p class="timeline-company">CoverMyMeds</p>
+                <p class="timeline-dates">May 2022 — Present</p>
+              </div>
+              <svg class="expand-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 8l4 4 4-4"/>
+              </svg>
+            </button>
+            <div class="timeline-content">
+              <ul>
+                <li>Help lead platform and infrastructure engineering initiatives using Terraform, Kubernetes, and Azure, <strong>supporting 50+ developers across 10+ product teams</strong> to ship compliant, production-ready services.</li>
+                <li>Design and maintain reusable Terraform modules and platform standards that balance scalability, security, and developer experience, <strong>reducing environment provisioning time from weeks to hours</strong>.</li>
+                <li>Build and operate Kubernetes-based application platforms using Argo CD for GitOps delivery and JFrog Artifactory for artifact management, achieving 99.9% platform uptime.</li>
+                <li>Develop internal tooling to automate SOX program change workflows.</li>
+                <li>Mentor Site Reliability Engineers and create onboarding programs and accelerated platform adoption.</li>
+              </ul>
+              <div class="timeline-details">
+                <h4>Key Projects & Impact</h4>
+                <div class="impact-grid">
+                  <div class="impact-item">
+                    <strong>GitHub Enterprise SOX Compliance</strong>
+                    <p>Led project as PM and developer to bring GitHub Enterprise into SOX compliance within tight timeline</p>
+                  </div>
+                  <div class="impact-item">
+                    <strong>Security Compliance</strong>
+                    <p>Implemented automated compliance checks reducing audit prep.</p>
+                  </div>
+                  <div class="impact-item">
+                    <strong>Developer Experience</strong>
+                    <p>Created self-service platform reducing ops involvement</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <ul>
-  <li>Lead platform and infrastructure engineering initiatives using Terraform, Kubernetes, and Azure to enable multiple product teams to ship compliant, production ready services.</li>
-  <li>Design and maintain reusable Terraform modules and platform standards that balance scalability, security, and developer experience.</li>
-  <li>Build and operate Kubernetes based application platforms using Argo CD for GitOps delivery and JFrog Artifactory for artifact management.</li>
-  <li>Develop internal tooling to automate SOX program change workflows, reducing turnaround time from days to hours.</li>
-  <li>Mentor Site Reliability Engineers and create onboarding programs that accelerate adoption of platform and deployment practices.</li>
-</ul>
           </article>
-          <article class="timeline-item">
-            <div>
-              <p class="timeline-role">Senior Site Reliability Engineer</p>
-              <p class="timeline-company">84.51° (The Kroger Company)</p>
-              <p class="timeline-dates">Nov 2019 — May 2022</p>
+          <article class="timeline-item expandable">
+            <button class="timeline-header" aria-expanded="false">
+              <div class="timeline-header-content">
+                <p class="timeline-role">Senior Site Reliability Engineer</p>
+                <p class="timeline-company">84.51° (The Kroger Company)</p>
+                <p class="timeline-dates">Nov 2019 — May 2022</p>
+              </div>
+              <svg class="expand-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 8l4 4 4-4"/>
+              </svg>
+            </button>
+            <div class="timeline-content">
+              <ul>
+                <li>Helped form the SRE team and established SLOs and monitoring practices, <strong data-count="40">improving MTTR by 40%</strong> through better incident detection.</li>
+                <li>Led deployment of enterprise observability tooling for monitoring and alerting, <strong data-count="100">providing visibility across 100+ microservices</strong>.</li>
+                <li>Delivered stacks with Prometheus, Thanos, Jaeger, and Dynatrace, <strong data-count="65">reducing alert noise by 65%</strong> through improved signal-to-noise ratio.</li>
+              </ul>
+              <div class="timeline-details">
+                <h4>Observability Platform Impact</h4>
+                <div class="impact-grid">
+                  <div class="impact-item">
+                    <strong>Incident Response</strong>
+                    <p>Established on-call rotation and runbook system</p>
+                  </div>
+                  <div class="impact-item">
+                    <strong>SLO Framework</strong>
+                    <p>Defined SLIs/SLOs for 10+ critical services with automated tracking</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <ul>
-              <li>Helped form the SRE team and established SLOs and monitoring practices.</li>
-              <li>Led deployment of enterprise observability tooling for monitoring and alerting.</li>
-              <li>Delivered stacks with Prometheus, Thanos, Jaeger, and Dynatrace.</li>
-            </ul>
           </article>
-          <article class="timeline-item">
-            <div>
-              <p class="timeline-role">Versatilist Engineer</p>
-              <p class="timeline-company">84.51° (The Kroger Company)</p>
-              <p class="timeline-dates">Jun 2018 — Nov 2019</p>
+          <article class="timeline-item expandable">
+            <button class="timeline-header" aria-expanded="false">
+              <div class="timeline-header-content">
+                <p class="timeline-role">Versatilist Engineer</p>
+                <p class="timeline-company">84.51° (The Kroger Company)</p>
+                <p class="timeline-dates">Jun 2018 — Nov 2019</p>
+              </div>
+              <svg class="expand-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 8l4 4 4-4"/>
+              </svg>
+            </button>
+            <div class="timeline-content">
+              <ul>
+                <li>Partnered with engineering and infrastructure to ship a commercial application.</li>
+                <li>Built monitoring, alerting, and automation for performance improvements.</li>
+                <li>Led Grafana adoption with real-time insights on usage and performance.</li>
+              </ul>
             </div>
-            <ul>
-              <li>Partnered with engineering and infrastructure to ship a commercial application.</li>
-              <li>Built monitoring, alerting, and automation for performance improvements.</li>
-              <li>Led Grafana adoption with real-time insights on usage and performance.</li>
-            </ul>
           </article>
-          <article class="timeline-item">
-            <div>
-              <p class="timeline-role">Information Technology Co-op</p>
-              <p class="timeline-company">84.51° (The Kroger Company)</p>
-              <p class="timeline-dates">May 2016 — May 2018</p>
+          <article class="timeline-item expandable">
+            <button class="timeline-header" aria-expanded="false">
+              <div class="timeline-header-content">
+                <p class="timeline-role">Information Technology Co-op</p>
+                <p class="timeline-company">84.51° (The Kroger Company)</p>
+                <p class="timeline-dates">May 2016 — May 2018</p>
+              </div>
+              <svg class="expand-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 8l4 4 4-4"/>
+              </svg>
+            </button>
+            <div class="timeline-content">
+              <ul>
+                <li>Database, desktop, network, and Windows infrastructure rotations.</li>
+                <li>Deployed Graylog, supported Exadata/Postgres/MongoDB troubleshooting.</li>
+                <li>Managed enterprise OS changes and endpoint tooling (Jamf, SCCM).</li>
+                <li>Implemented network traffic prioritization and datacenter upgrades.</li>
+              </ul>
             </div>
-            <ul>
-              <li>Database, desktop, network, and Windows infrastructure rotations.</li>
-              <li>Deployed Graylog, supported Exadata/Postgres/MongoDB troubleshooting.</li>
-              <li>Managed enterprise OS changes and endpoint tooling (Jamf, SCCM).</li>
-              <li>Implemented network traffic prioritization and datacenter upgrades.</li>
-            </ul>
           </article>
           <!-- <article class="timeline-item">
             <div>
@@ -245,14 +409,90 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> Jacob Wilson</p>
+      <p>© <span id="year"></span> Jacob Wilson • Built with care (and too much coffee) in Chicago ☕</p>
       <div class="footer-links">
-        <a href="https://www.facebook.com/jacobwilson4" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://www.linkedin.com/in/jacob-wilson-54795077" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://www.instagram.com/jacob.wilson5/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/jacob-wilson-54795077" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+        <a href="https://github.com/jacobwilsonnet" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+        <a href="https://www.instagram.com/jacob.wilson5/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
       </div>
     </div>
   </footer>
+
+  <!-- Scroll to top button -->
+  <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <!-- Command Palette -->
+  <div id="command-palette" class="command-palette" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="command-palette-backdrop"></div>
+    <div class="command-palette-container">
+      <div class="command-palette-header">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="text" class="command-palette-input" placeholder="Type a command or search..." />
+        <kbd class="command-palette-kbd">ESC</kbd>
+      </div>
+      <div class="command-palette-results">
+        <div class="command-item" data-action="navigate" data-target="#about">
+          <span class="command-icon">📄</span>
+          <div class="command-info">
+            <div class="command-name">About</div>
+            <div class="command-desc">Learn more about me</div>
+          </div>
+        </div>
+        <div class="command-item" data-action="navigate" data-target="#skills">
+          <span class="command-icon">🛠️</span>
+          <div class="command-info">
+            <div class="command-name">Skills</div>
+            <div class="command-desc">View my tech stack</div>
+          </div>
+        </div>
+        <div class="command-item" data-action="navigate" data-target="#experience">
+          <span class="command-icon">💼</span>
+          <div class="command-info">
+            <div class="command-name">Experience</div>
+            <div class="command-desc">See my work history</div>
+          </div>
+        </div>
+        <div class="command-item" data-action="navigate" data-target="#contact">
+          <span class="command-icon">📧</span>
+          <div class="command-info">
+            <div class="command-name">Contact</div>
+            <div class="command-desc">Get in touch</div>
+          </div>
+        </div>
+        <div class="command-item" data-action="copy-email">
+          <span class="command-icon">📋</span>
+          <div class="command-info">
+            <div class="command-name">Copy Email</div>
+            <div class="command-desc">jacob@jacobwilson.net</div>
+          </div>
+        </div>
+        <div class="command-item" data-action="theme">
+          <span class="command-icon">🌙</span>
+          <div class="command-info">
+            <div class="command-name">Toggle Theme</div>
+            <div class="command-desc">Switch appearance (coming soon)</div>
+          </div>
+        </div>
+      </div>
+      <div class="command-palette-footer">
+        <div class="command-hint">
+          <kbd>↑</kbd><kbd>↓</kbd> Navigate
+        </div>
+        <div class="command-hint">
+          <kbd>Enter</kbd> Select
+        </div>
+        <div class="command-hint">
+          <kbd>ESC</kbd> Close
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
