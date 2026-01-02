@@ -139,7 +139,7 @@
             are built with curiosity and a willingness to break things.
           </p>
         </div>
-        <div class="about-card currently-card">
+        <!-- <div class="about-card currently-card">
           <h3>Currently</h3>
           <ul class="currently-list">
             <li><strong>Overengineering:</strong> My personal website (obviously)</li>
@@ -147,7 +147,7 @@
             <li><strong>Exploring:</strong> Chicago's coffee scene</li>
           </ul>
         </div>
-      </div>
+      </div> -->
     </section>
 
     <section class="section highlights">
@@ -156,18 +156,23 @@
         <div class="card-grid">
           <article class="card">
             <span class="card-icon mdi mdi-cog"></span>
-            <h3>Infrastructure as Code</h3>
-            <p>Reusable Terraform modules and Kubernetes ready patterns that make compliant environments easy to ship and operate.</p>
-          </article>
-          <article class="card">
-            <span class="card-icon mdi mdi-chart-line"></span>
-            <h3>Observability</h3>
-            <p>Prometheus, Grafana, Thanos, Jaeger, Datadog, and Dynatrace for insight that supports fast, calm incident response.</p>
+            <h3>Infrastructure as Code at Scale</h3>
+            <p>Building and managing enterprise Terraform platforms with automated compliance and self-service provisioning across multiple teams and environments.</p>
           </article>
           <article class="card">
             <span class="card-icon mdi mdi-shield-check"></span>
-            <h3>Reliability Practices</h3>
-            <p>Incident response, SLI/SLO definition, and postmortems that drive lasting improvements.</p>
+            <h3>Compliance Automation</h3>
+            <p>Implementing SOX and ITGC controls as code, with automated checks, audit trails, and secrets rotation across cloud platforms.</p>
+          </article>
+          <article class="card">
+            <span class="card-icon mdi mdi-chart-line"></span>
+            <h3>Platform Observability</h3>
+            <p>Datadog, Prometheus, and Grafana monitoring for IaC tooling, Kubernetes platforms, and cloud infrastructure with proactive alerting.</p>
+          </article>
+          <article class="card">
+            <span class="card-icon mdi mdi-book-open"></span>
+            <h3>Documentation & Enablement</h3>
+            <p>Creating comprehensive guides and onboarding programs that accelerate team adoption and reduce operational overhead.</p>
           </article>
         </div>
       </div>
@@ -182,9 +187,10 @@
             <div class="tech-tags">
               <span class="tech-tag">Azure</span>
               <span class="tech-tag">Kubernetes</span>
-              <span class="tech-tag">Terraform</span>
+              <span class="tech-tag">Terraform / HCP Terraform</span>
               <span class="tech-tag">Docker</span>
               <span class="tech-tag">Argo CD</span>
+              <span class="tech-tag">GitHub</span>
             </div>
           </div>
           <div class="tech-category" data-index="02">
@@ -202,20 +208,31 @@
             <h3>Tools & Automation</h3>
             <div class="tech-tags">
               <span class="tech-tag">GitOps</span>
+              <span class="tech-tag">GitHub Actions</span>
+              <span class="tech-tag">Jenkins</span>
+              <span class="tech-tag">HashiCorp Vault</span>
               <span class="tech-tag">JFrog Artifactory</span>
-              <span class="tech-tag">Graylog</span>
               <span class="tech-tag">Ansible</span>
               <span class="tech-tag">Python</span>
               <span class="tech-tag">Bash</span>
             </div>
           </div>
-          <div class="tech-category" data-index="04">
+          <!-- <div class="tech-category" data-index="04">
             <h3>Databases & Data</h3>
             <div class="tech-tags">
               <span class="tech-tag">PostgreSQL</span>
               <span class="tech-tag">MongoDB</span>
               <span class="tech-tag">Exadata</span>
               <span class="tech-tag">Redis</span>
+            </div>
+          </div> -->
+          <div class="tech-category" data-index="05">
+            <h3>Compliance & Security</h3>
+            <div class="tech-tags">
+              <span class="tech-tag">SOX Controls</span>
+              <span class="tech-tag">ITGC Automation</span>
+              <span class="tech-tag">HashiCorp Vault</span>
+              <span class="tech-tag">Azure Key Vault</span>
             </div>
           </div>
         </div>
@@ -238,30 +255,42 @@
               </svg>
             </button>
             <div class="timeline-content">
-              <ul>
-                <li>Help lead platform and infrastructure engineering initiatives using Terraform, Kubernetes, and Azure, <strong>supporting 50+ developers across 10+ product teams</strong> to ship compliant, production-ready services.</li>
-                <li>Design and maintain reusable Terraform modules and platform standards that balance scalability, security, and developer experience, <strong>reducing environment provisioning time from weeks to hours</strong>.</li>
-                <li>Build and operate Kubernetes-based application platforms using Argo CD for GitOps delivery and JFrog Artifactory for artifact management, achieving 99.9% platform uptime.</li>
-                <li>Develop internal tooling to automate SOX program change workflows.</li>
-                <li>Mentor Site Reliability Engineers and create onboarding programs and accelerated platform adoption.</li>
-              </ul>
               <div class="timeline-details">
                 <h4>Key Projects & Impact</h4>
                 <div class="impact-grid">
                   <div class="impact-item">
                     <strong>GitHub Enterprise SOX Compliance</strong>
-                    <p>Led project as PM and developer to bring GitHub Enterprise into SOX compliance within tight timeline</p>
+                    <p>Led as PM and developer to implement automated branch protections across enterprise-scale repository management, delivering on tight audit timeline and preventing compliance deficiency</p>
                   </div>
                   <div class="impact-item">
-                    <strong>Security Compliance</strong>
-                    <p>Implemented automated compliance checks reducing audit prep.</p>
+                    <strong>Infrastructure as Code at Scale</strong>
+                    <p>Migrated hundreds of repositories from manual management to Terraform, enabling compliant self-service while maintaining security controls</p>
                   </div>
                   <div class="impact-item">
-                    <strong>Developer Experience</strong>
-                    <p>Created self-service platform reducing ops involvement</p>
+                    <strong>Cloud Infrastructure Modules</strong>
+                    <p>Developed production-ready Terraform modules for cloud services, used across multiple teams and environments</p>
+                  </div>
+                  <div class="impact-item">
+                    <strong>IaC Platform Monitoring</strong>
+                    <p>Implemented Datadog monitoring for platform runners and deployment pipelines, improving platform reliability and incident response</p>
+                  </div>
+                  <div class="impact-item">
+                    <strong>Documentation & Enablement</strong>
+                    <p>Created comprehensive onboarding guides for multiple platforms, reducing time-to-productivity for new team members</p>
+                  </div>
+                  <div class="impact-item">
+                    <strong>Platform Migration</strong>
+                    <p>Led migration of 100+ monitoring alerts to new collaboration platform, updating infrastructure modules and creating migration documentation</p>
                   </div>
                 </div>
               </div>
+              <ul>
+                <li>Led SOX compliance initiative as PM and developer to bring GitHub Enterprise into compliance, implementing automated branch protection controls across <strong>enterprise-scale repository management</strong>, preventing potential company-wide audit deficiency.</li>
+                <li>Architected and deployed Infrastructure as Code platform managing <strong>hundreds of repositories</strong> with Terraform, implementing automated compliance checks and self-service provisioning that <strong>reduced environment setup</strong>.</li>
+                <li>Developed production-ready Terraform modules for cloud services, enabling compliant, repeatable deployments across development, staging, and production environments.</li>
+                <li>Built comprehensive monitoring for IaC tooling using Datadog, implementing proactive alerts for platform runners and deployment pipelines, improving platform reliability and reducing MTTR.</li>
+                <li>Led migration of <strong>100+ monitoring alerts</strong> to new collaboration platform, updating Terraform modules and creating migration guides to support company-wide platform transition.</li>
+              </ul>
             </div>
           </article>
           <article class="timeline-item expandable">
@@ -276,11 +305,6 @@
               </svg>
             </button>
             <div class="timeline-content">
-              <ul>
-                <li>Helped form the SRE team and established SLOs and monitoring practices, <strong data-count="40">improving MTTR by 40%</strong> through better incident detection.</li>
-                <li>Led deployment of enterprise observability tooling for monitoring and alerting, <strong data-count="100">providing visibility across 100+ microservices</strong>.</li>
-                <li>Delivered stacks with Prometheus, Thanos, Jaeger, and Dynatrace, <strong data-count="65">reducing alert noise by 65%</strong> through improved signal-to-noise ratio.</li>
-              </ul>
               <div class="timeline-details">
                 <h4>Observability Platform Impact</h4>
                 <div class="impact-grid">
@@ -294,6 +318,11 @@
                   </div>
                 </div>
               </div>
+              <ul>
+                <li>Helped form the SRE team and established SLOs and monitoring practices, <strong data-count="40">improving MTTR by 40%</strong> through better incident detection.</li>
+                <li>Led deployment of enterprise observability tooling for monitoring and alerting, <strong data-count="100">providing visibility across 100+ microservices</strong>.</li>
+                <li>Delivered stacks with Prometheus, Thanos, Jaeger, and Dynatrace, <strong data-count="65">reducing alert noise by 65%</strong> through improved signal-to-noise ratio.</li>
+              </ul>
             </div>
           </article>
           <article class="timeline-item expandable">
