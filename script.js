@@ -277,7 +277,7 @@ document.addEventListener('keydown', (e) => {
       updateSelection();
     } else if (e.key === 'Enter') {
       e.preventDefault();
-      executeCommand(commandItems[selectedIndex]);
+      executeCommandWithTracking(commandItems[selectedIndex]);
     }
   }
 });
@@ -285,7 +285,7 @@ document.addEventListener('keydown', (e) => {
 // Click handlers
 commandItems.forEach((item, index) => {
   item.addEventListener('click', () => {
-    executeCommand(item);
+    executeCommandWithTracking(item);
   });
 
   item.addEventListener('mouseenter', () => {
@@ -314,3 +314,94 @@ commandInput.addEventListener('input', (e) => {
   selectedIndex = 0;
   updateSelection();
 });
+
+// Google Analytics Event Tracking
+function trackEvent(category, action, label) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', action, {
+      'event_category': category,
+      'event_label': label
+    });
+  }
+}
+
+// Track resume downloads
+document.querySelectorAll('a[href*="Resume"], a[href*="resume"]').forEach(link => {
+  link.addEventListener('click', () => {
+    trackEvent('Engagement', 'download_resume', link.href);
+  });
+});
+
+// Track email clicks
+document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+  link.addEventListener('click', () => {
+    trackEvent('Contact', 'click_email', link.href);
+  });
+});
+
+// Track external social links
+document.querySelectorAll('a[href*="linkedin.com"], a[href*="github.com"], a[href*="instagram.com"]').forEach(link => {
+  link.addEventListener('click', () => {
+    const platform = link.href.includes('linkedin') ? 'LinkedIn'
+                   : link.href.includes('github') ? 'GitHub'
+                   : 'Instagram';
+    trackEvent('Social', 'click_' + platform.toLowerCase(), link.href);
+  });
+});
+
+// Track timeline expansions (add to existing click handler)
+const originalTimelineClickHandler = timelineHeaders.forEach;
+timelineHeaders.forEach(header => {
+  const existingListener = header.onclick;
+  header.addEventListener('click', () => {
+    const company = header.querySelector('.timeline-company')?.textContent || 'Unknown';
+    const role = header.querySelector('.timeline-role')?.textContent || 'Unknown';
+    trackEvent('Engagement', 'expand_experience', `${company} - ${role}`);
+  });
+});
+
+// Track command palette usage
+const originalExecuteCommand = executeCommand;
+function executeCommandWithTracking(item) {
+  const action = item.dataset.action;
+  const commandName = item.querySelector('.command-name')?.textContent || 'Unknown';
+  trackEvent('Navigation', 'command_palette_' + action, commandName);
+  originalExecuteCommand(item);
+}
+
+// Cookie Consent Management
+const cookieConsent = document.getElementById('cookie-consent');
+const cookieAcceptBtn = document.getElementById('cookie-accept');
+const cookieDeclineBtn = document.getElementById('cookie-decline');
+
+function checkCookieConsent() {
+  const consent = localStorage.getItem('cookie-consent');
+  if (!consent) {
+    // Show banner after a short delay
+    setTimeout(() => {
+      cookieConsent.classList.add('show');
+    }, 1000);
+  } else if (consent === 'declined') {
+    // Disable Google Analytics if previously declined
+    window['ga-disable-G-8269KF2S8G'] = true;
+  }
+}
+
+function acceptCookies() {
+  localStorage.setItem('cookie-consent', 'accepted');
+  cookieConsent.classList.remove('show');
+  trackEvent('Consent', 'accept_cookies', 'accepted');
+}
+
+function declineCookies() {
+  localStorage.setItem('cookie-consent', 'declined');
+  cookieConsent.classList.remove('show');
+  window['ga-disable-G-8269KF2S8G'] = true;
+  trackEvent('Consent', 'decline_cookies', 'declined');
+}
+
+if (cookieAcceptBtn && cookieDeclineBtn) {
+  cookieAcceptBtn.addEventListener('click', acceptCookies);
+  cookieDeclineBtn.addEventListener('click', declineCookies);
+  checkCookieConsent();
+}

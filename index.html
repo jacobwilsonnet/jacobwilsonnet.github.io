@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8269KF2S8G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8269KF2S8G', {
+      'anonymize_ip': true,
+      'cookie_flags': 'SameSite=None;Secure'
+    });
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Jacob Wilson | Site Reliability Engineer</title>
@@ -439,7 +451,8 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© <span id="year"></span> Jacob Wilson • Built with care in Chicago<br>
-      <span style="font-size: 0.85rem; color: var(--text-muted);">Overengineered with love by a human and Claude.... well mostly Claude</span></p>
+      <span style="font-size: 0.85rem; color: var(--text-muted);">Overengineered with love by a human and Claude.... well mostly Claude</span><br>
+      <span style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; display: inline-block;">This site uses Google Analytics with anonymized IPs to understand visitor behavior. No personal data is sold or shared.</span></p>
       <div class="footer-links">
         <a href="https://www.linkedin.com/in/jacob-wilson-54795077" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
         <a href="https://github.com/jacobwilsonnet" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
@@ -520,6 +533,19 @@
         <div class="command-hint">
           <kbd>ESC</kbd> Close
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-consent" class="cookie-consent" aria-live="polite" aria-atomic="true">
+    <div class="cookie-consent-content">
+      <p class="cookie-consent-text">
+        This site uses cookies via Google Analytics to analyze traffic and improve your experience. All data is anonymized.
+      </p>
+      <div class="cookie-consent-actions">
+        <button id="cookie-accept" class="btn btn-primary btn-sm">Got it</button>
+        <button id="cookie-decline" class="btn btn-ghost btn-sm">Decline</button>
       </div>
     </div>
   </div>
