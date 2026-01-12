@@ -319,12 +319,21 @@ commandInput.addEventListener('input', (e) => {
   updateSelection();
 });
 
-// Google Analytics Event Tracking
+// Google Analytics & Datadog Event Tracking
 function trackEvent(category, action, label) {
+  // Google Analytics
   if (typeof gtag !== 'undefined') {
     gtag('event', action, {
       'event_category': category,
       'event_label': label
+    });
+  }
+
+  // Datadog RUM
+  if (window.DD_RUM) {
+    window.DD_RUM.addAction(action, {
+      category: category,
+      label: label
     });
   }
 }
