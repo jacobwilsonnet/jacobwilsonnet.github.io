@@ -369,39 +369,60 @@ function executeCommandWithTracking(item) {
   originalExecuteCommand(item);
 }
 
-// Cookie Consent Management
-const cookieConsent = document.getElementById('cookie-consent');
-const cookieAcceptBtn = document.getElementById('cookie-accept');
-const cookieDeclineBtn = document.getElementById('cookie-decline');
+// Scroll Depth Tracking
+const scrollDepths = [25, 50, 75, 100];
+const scrollDepthsReached = new Set();
 
-function checkCookieConsent() {
-  const consent = localStorage.getItem('cookie-consent');
-  if (!consent) {
-    // Show banner after a short delay
-    setTimeout(() => {
-      cookieConsent.classList.add('show');
-    }, 1000);
-  } else if (consent === 'declined') {
-    // Disable Google Analytics if previously declined
-    window['ga-disable-G-8269KF2S8G'] = true;
+function trackScrollDepth() {
+  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrolled = window.pageYOffset;
+  const percentScrolled = (scrolled / scrollHeight) * 100;
+
+  scrollDepths.forEach(depth => {
+    if (percentScrolled >= depth && !scrollDepthsReached.has(depth)) {
+      scrollDepthsReached.add(depth);
+      trackEvent('Scroll Depth', 'scroll', depth + '%');
+    }
+  });
+}
+
+let scrollDepthTimeout;
+window.addEventListener('scroll', () => {
+  if (scrollDepthTimeout) {
+    window.cancelAnimationFrame(scrollDepthTimeout);
   }
+  scrollDepthTimeout = window.requestAnimationFrame(trackScrollDepth);
+});
+
+// Time-based Engagement Tracking
+const engagementMilestones = [30, 60, 120, 300]; // seconds
+const milestonesReached = new Set();
+let startTime = Date.now();
+
+function trackEngagementTime() {
+  const timeOnPage = Math.floor((Date.now() - startTime) / 1000);
+
+  engagementMilestones.forEach(milestone => {
+    if (timeOnPage >= milestone && !milestonesReached.has(milestone)) {
+      milestonesReached.add(milestone);
+      trackEvent('Engagement', 'time_on_page', milestone + 's');
+    }
+  });
 }
 
-function acceptCookies() {
-  localStorage.setItem('cookie-consent', 'accepted');
-  cookieConsent.classList.remove('show');
-  trackEvent('Consent', 'accept_cookies', 'accepted');
-}
+// Check every 5 seconds
+setInterval(trackEngagementTime, 5000);
 
-function declineCookies() {
-  localStorage.setItem('cookie-consent', 'declined');
-  cookieConsent.classList.remove('show');
-  window['ga-disable-G-8269KF2S8G'] = true;
-  trackEvent('Consent', 'decline_cookies', 'declined');
-}
+// Outbound Link Tracking (all external links)
+document.querySelectorAll('a[href^="http"]').forEach(link => {
+  // Skip if already tracked (social links)
+  if (!link.href.includes('linkedin.com') &&
+      !link.href.includes('github.com') &&
+      !link.href.includes('instagram.com') &&
+      !link.href.includes('jacobwilson.net')) {
+    link.addEventListener('click', () => {
+      trackEvent('Outbound', 'click_external_link', link.href);
+    });
+  }
+});
 
-if (cookieAcceptBtn && cookieDeclineBtn) {
-  cookieAcceptBtn.addEventListener('click', acceptCookies);
-  cookieDeclineBtn.addEventListener('click', declineCookies);
-  checkCookieConsent();
-}
