@@ -8,10 +8,7 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-8269KF2S8G', {
-      'anonymize_ip': true,
-      'cookie_flags': 'SameSite=None;Secure'
-    });
+    gtag('config', 'G-8269KF2S8G');
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -35,14 +32,15 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Jacob Wilson">
+  <link rel="canonical" href="https://jacobwilson.net/">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
-  <link rel="preload" as="style" href="styles.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preload" as="style" href="styles.min.css">
+  <link rel="stylesheet" href="styles.min.css">
 
   <!-- Structured Data for SEO -->
   <script type="application/ld+json">
@@ -102,7 +100,14 @@
             <div class="hero-title">
               <div class="hero-eyebrow">
                 <p class="eyebrow">Jacob Wilson</p>
-                <img class="hero-photo-inline" src="assets/jacob-wilson.jpg" alt="Portrait of Jacob Wilson" loading="lazy">
+                <img class="hero-photo-inline"
+                     src="assets/jacob-wilson.jpg"
+                     srcset="assets/jacob-wilson-small.jpg 400w,
+                             assets/jacob-wilson-medium.jpg 800w,
+                             assets/jacob-wilson.jpg 1200w"
+                     sizes="(max-width: 768px) 100px, 150px"
+                     alt="Portrait of Jacob Wilson"
+                     loading="lazy">
               </div>
               <h1>Site Reliability Engineer</h1>
               <p class="hero-subtitle">Here to make things work better (and have fun doing it)</p>
@@ -129,7 +134,13 @@
               </div>
             </div>
             <div class="hero-image" role="presentation">
-              <img src="assets/jacob-wilson.jpg" alt="Portrait of Jacob Wilson" loading="lazy">
+              <img src="assets/jacob-wilson.jpg"
+                   srcset="assets/jacob-wilson-small.jpg 400w,
+                           assets/jacob-wilson-medium.jpg 800w,
+                           assets/jacob-wilson.jpg 1200w"
+                   sizes="(max-width: 768px) 300px, (max-width: 1024px) 400px, 500px"
+                   alt="Portrait of Jacob Wilson"
+                   loading="lazy">
             </div>
           </div>
         </div>
@@ -167,22 +178,22 @@
         <h2>Focus areas</h2>
         <div class="card-grid">
           <article class="card">
-            <span class="card-icon mdi mdi-cog"></span>
+            <span class="card-icon mdi mdi-cog" aria-hidden="true"></span>
             <h3>Infrastructure as Code at Scale</h3>
             <p>Building and managing enterprise Terraform platforms with automated compliance and self-service provisioning across multiple teams and environments.</p>
           </article>
           <article class="card">
-            <span class="card-icon mdi mdi-shield-check"></span>
+            <span class="card-icon mdi mdi-shield-check" aria-hidden="true"></span>
             <h3>Compliance Automation</h3>
             <p>Implementing SOX and ITGC controls as code, with automated checks, audit trails, and secrets rotation across cloud platforms.</p>
           </article>
           <article class="card">
-            <span class="card-icon mdi mdi-chart-line"></span>
+            <span class="card-icon mdi mdi-chart-line" aria-hidden="true"></span>
             <h3>Platform Observability</h3>
             <p>Datadog, Prometheus, and Grafana monitoring for IaC tooling, Kubernetes platforms, and cloud infrastructure with proactive alerting.</p>
           </article>
           <article class="card">
-            <span class="card-icon mdi mdi-book-open"></span>
+            <span class="card-icon mdi mdi-book-open" aria-hidden="true"></span>
             <h3>Documentation & Enablement</h3>
             <p>Creating comprehensive guides and onboarding programs that accelerate team adoption and reduce operational overhead.</p>
           </article>
@@ -193,8 +204,15 @@
     <section id="skills" class="section tech-stack">
       <div class="container">
         <h2>Tech Stack</h2>
+        <div class="tech-filter-buttons">
+          <button class="tech-filter-btn active" data-filter="all">All</button>
+          <button class="tech-filter-btn" data-filter="cloud">Cloud & Infrastructure</button>
+          <button class="tech-filter-btn" data-filter="observability">Observability</button>
+          <button class="tech-filter-btn" data-filter="tools">Tools & Automation</button>
+          <button class="tech-filter-btn" data-filter="security">Compliance & Security</button>
+        </div>
         <div class="tech-categories">
-          <div class="tech-category" data-index="01">
+          <div class="tech-category" data-index="01" data-category="cloud">
             <h3>Cloud & Infrastructure</h3>
             <div class="tech-tags">
               <span class="tech-tag">Azure</span>
@@ -205,7 +223,7 @@
               <span class="tech-tag">GitHub</span>
             </div>
           </div>
-          <div class="tech-category" data-index="02">
+          <div class="tech-category" data-index="02" data-category="observability">
             <h3>Observability & Monitoring</h3>
             <div class="tech-tags">
               <span class="tech-tag">Prometheus</span>
@@ -216,7 +234,7 @@
               <span class="tech-tag">Dynatrace</span>
             </div>
           </div>
-          <div class="tech-category" data-index="03">
+          <div class="tech-category" data-index="03" data-category="tools">
             <h3>Tools & Automation</h3>
             <div class="tech-tags">
               <span class="tech-tag">GitOps</span>
@@ -238,7 +256,7 @@
               <span class="tech-tag">Redis</span>
             </div>
           </div> -->
-          <div class="tech-category" data-index="05">
+          <div class="tech-category" data-index="05" data-category="security">
             <h3>Compliance & Security</h3>
             <div class="tech-tags">
               <span class="tech-tag">SOX Controls</span>
@@ -431,15 +449,15 @@
           I’m always open to meaningful collaborations, new challenges, and friendly conversations.
         </p>
         <div class="contact-grid">
-          <a class="contact-card" href="mailto:jacob@jacobwilson.net">
+          <a class="contact-card" href="mailto:jacob@jacobwilson.net" aria-label="Send email to jacob@jacobwilson.net">
             <span>Email</span>
             <strong>jacob@jacobwilson.net</strong>
           </a>
-          <a class="contact-card" href="https://www.linkedin.com/in/jacob-wilson-54795077" target="_blank" rel="noopener">
+          <a class="contact-card" href="https://www.linkedin.com/in/jacob-wilson-54795077" target="_blank" rel="noopener" aria-label="Connect with Jacob Wilson on LinkedIn">
             <span>LinkedIn</span>
             <strong>Connect professionally</strong>
           </a>
-          <a class="contact-card" href="https://www.instagram.com/jacob.wilson5/" target="_blank" rel="noopener">
+          <a class="contact-card" href="https://www.instagram.com/jacob.wilson5/" target="_blank" rel="noopener" aria-label="Follow Jacob Wilson on Instagram">
             <span>Instagram</span>
             <strong>Social updates</strong>
           </a>
@@ -452,7 +470,9 @@
     <div class="container footer-inner">
       <p>© <span id="year"></span> Jacob Wilson • Built with care in Chicago<br>
       <span style="font-size: 0.85rem; color: var(--text-muted);">Overengineered with love by a human and Claude.... well mostly Claude</span><br>
-      <span style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; display: inline-block;">This site uses Google Analytics with anonymized IPs to understand visitor behavior. No personal data is sold or shared.</span></p>
+      <span class="keyboard-hint" style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; display: inline-block;">
+        Tip: Press <kbd style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">⌘K</kbd> or <kbd style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">Ctrl+K</kbd> for quick navigation
+      </span></p>
       <div class="footer-links">
         <a href="https://www.linkedin.com/in/jacob-wilson-54795077" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
         <a href="https://github.com/jacobwilsonnet" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
@@ -460,6 +480,11 @@
       </div>
     </div>
   </footer>
+
+  <!-- Keyboard shortcut hint toast -->
+  <div id="keyboard-hint-toast" class="keyboard-hint-toast">
+    <span>Press <kbd>⌘K</kbd> or <kbd>Ctrl+K</kbd> to navigate</span>
+  </div>
 
   <!-- Scroll to top button -->
   <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top">
@@ -476,7 +501,7 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
         </svg>
-        <input type="text" class="command-palette-input" placeholder="Type a command or search..." />
+        <input type="text" class="command-palette-input" placeholder="Type a command or search..." aria-label="Search commands and navigate site" />
         <kbd class="command-palette-kbd">ESC</kbd>
       </div>
       <div class="command-palette-results">
@@ -513,13 +538,6 @@
           <div class="command-info">
             <div class="command-name">Copy Email</div>
             <div class="command-desc">jacob@jacobwilson.net</div>
-          </div>
-        </div>
-        <div class="command-item" data-action="theme">
-          <span class="command-icon">🌙</span>
-          <div class="command-info">
-            <div class="command-name">Toggle Theme</div>
-            <div class="command-desc">Switch appearance (coming soon)</div>
           </div>
         </div>
       </div>

@@ -233,6 +233,10 @@ function executeCommand(item) {
   const action = item.dataset.action;
   const target = item.dataset.target;
 
+  // Track command palette usage
+  const commandName = item.querySelector('.command-name')?.textContent || 'Unknown';
+  trackEvent('Navigation', 'command_palette_' + action, commandName);
+
   if (action === 'navigate' && target) {
     closeCommandPalette();
     document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
@@ -277,7 +281,7 @@ document.addEventListener('keydown', (e) => {
       updateSelection();
     } else if (e.key === 'Enter') {
       e.preventDefault();
-      executeCommandWithTracking(commandItems[selectedIndex]);
+      executeCommand(commandItems[selectedIndex]);
     }
   }
 });
@@ -285,7 +289,7 @@ document.addEventListener('keydown', (e) => {
 // Click handlers
 commandItems.forEach((item, index) => {
   item.addEventListener('click', () => {
-    executeCommandWithTracking(item);
+    executeCommand(item);
   });
 
   item.addEventListener('mouseenter', () => {
@@ -349,25 +353,14 @@ document.querySelectorAll('a[href*="linkedin.com"], a[href*="github.com"], a[hre
   });
 });
 
-// Track timeline expansions (add to existing click handler)
-const originalTimelineClickHandler = timelineHeaders.forEach;
+// Track timeline expansions
 timelineHeaders.forEach(header => {
-  const existingListener = header.onclick;
   header.addEventListener('click', () => {
     const company = header.querySelector('.timeline-company')?.textContent || 'Unknown';
     const role = header.querySelector('.timeline-role')?.textContent || 'Unknown';
     trackEvent('Engagement', 'expand_experience', `${company} - ${role}`);
   });
 });
-
-// Track command palette usage
-const originalExecuteCommand = executeCommand;
-function executeCommandWithTracking(item) {
-  const action = item.dataset.action;
-  const commandName = item.querySelector('.command-name')?.textContent || 'Unknown';
-  trackEvent('Navigation', 'command_palette_' + action, commandName);
-  originalExecuteCommand(item);
-}
 
 // Scroll Depth Tracking
 const scrollDepths = [25, 50, 75, 100];
@@ -424,5 +417,50 @@ document.querySelectorAll('a[href^="http"]').forEach(link => {
       trackEvent('Outbound', 'click_external_link', link.href);
     });
   }
+});
+
+// Keyboard Hint Toast
+const keyboardHintToast = document.getElementById('keyboard-hint-toast');
+if (keyboardHintToast) {
+  const hasSeenHint = localStorage.getItem('keyboard-hint-seen');
+
+  if (!hasSeenHint) {
+    // Show toast after 2 seconds
+    setTimeout(() => {
+      keyboardHintToast.classList.add('show');
+
+      // Hide after 5 seconds
+      setTimeout(() => {
+        keyboardHintToast.classList.remove('show');
+        localStorage.setItem('keyboard-hint-seen', 'true');
+      }, 5000);
+    }, 2000);
+  }
+}
+
+// Tech Stack Filtering
+const techFilterButtons = document.querySelectorAll('.tech-filter-btn');
+const techCategories = document.querySelectorAll('.tech-category');
+
+techFilterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.filter;
+
+    // Update active button
+    techFilterButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    // Filter categories
+    techCategories.forEach(category => {
+      if (filter === 'all' || category.dataset.category === filter) {
+        category.classList.remove('hidden');
+      } else {
+        category.classList.add('hidden');
+      }
+    });
+
+    // Track filter usage
+    trackEvent('Skills', 'filter_tech_stack', filter);
+  });
 });
 

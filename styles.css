@@ -1071,9 +1071,7 @@ ul {
 .command-palette-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.85);
   animation: fadeIn 0.2s ease;
 }
 
@@ -1374,6 +1372,101 @@ html {
 
   .footer-links {
     justify-content: center;
+  }
+}
+
+/* Keyboard Hint Toast */
+.keyboard-hint-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--glass-border);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.keyboard-hint-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.keyboard-hint-toast kbd {
+  background: var(--bg-primary);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-family: monospace;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .keyboard-hint-toast {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    text-align: center;
+  }
+}
+
+/* Tech Stack Filter Buttons */
+.tech-filter-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tech-filter-btn {
+  padding: 0.5rem 1.25rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tech-filter-btn:hover {
+  background: var(--bg-secondary);
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+.tech-filter-btn.active {
+  background: var(--accent-gradient);
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.tech-category {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tech-category.hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .tech-filter-buttons {
+    gap: 0.5rem;
+  }
+
+  .tech-filter-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
   }
 }
 
